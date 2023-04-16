@@ -1,16 +1,15 @@
-import { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import LeftSide from './components/LeftSide';
 import MainContent from './components/MainContent';
 import RightSide from './components/RightSide';
-import { firstTableHeader } from './constans';
-import { ITableProps } from './models';
-import Circle from './images/circle.svg';
-import Switch from './images/switch.svg';
-import Arrow from './images/arrow.svg';
-import EtheLogo from './images/ethe-logo.svg';
 import Table from './components/Table';
+import { firstTableHeader } from './constans';
+import Arrow from './images/arrow.svg';
+import Circle from './images/circle.svg';
+import EtheLogo from './images/ethe-logo.svg';
+import Switch from './images/switch.svg';
+import { ITableProps } from './models';
 
 function App() {
   const firstBody = firstTableHeader.map((el: ITableProps) => ({
