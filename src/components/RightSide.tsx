@@ -1,10 +1,10 @@
-import React from 'react';
-import UpDown from '../images/up-down.svg';
-import Down from '../images/arrow.svg';
+import { useState } from 'react';
 import Out from '../images/Out.svg';
-import ProgressBar from './ProgressBar';
+import Down from '../images/arrow.svg';
+import UpDown from '../images/up-down.svg';
 import XBadge from './XBadge';
 export default function RightSide() {
+  const [percent, setPercent] = useState(20);
   return (
     <div className='flex flex-col'>
       <div className='px-6'>
@@ -43,7 +43,7 @@ export default function RightSide() {
         <p className='text-white font-medium text-base mb-4'>
           Amount -<span className='opacity-50'> Set order size</span>
         </p>
-        <div className='input-rounded w-5/6 flex justify-between items-center py-3 px-4 text-white opacity-50 mb-6'>
+        <div className='input-rounded w-full flex justify-between items-center py-3 px-4 text-white opacity-50 mb-6'>
           <p>0.00</p>
           <div className='flex items-center gap-2'>
             ETH
@@ -53,10 +53,18 @@ export default function RightSide() {
         <p className='text-white font-medium text-base mb-6'>
           Leverage -<span className='opacity-50'> Up To 10.00X</span>
         </p>
-        <div className='w-5/6 mb-6'>
-          <ProgressBar />
+        <div className='w-full mb-6'>
+          <input
+            id='range'
+            type='range'
+            min='0'
+            max='100'
+            className='w-full'
+            value={percent}
+            onChange={(e) => setPercent(parseInt(e.target.value))}
+          />
         </div>
-        <div className='flex justify-between items-center gap-4 w-5/6 mb-6'>
+        <div className='flex justify-between items-center gap-4 w-full mb-6'>
           <div className='flex justify-center items-center gap-4'>
             <div className='rounded-3xl py-[6px] px-4 border border-green-400'>
               <p className='w-20 font-bold text-base text-white opacity-70'>
@@ -74,11 +82,11 @@ export default function RightSide() {
         <p className='text-white font-medium text-base mb-4'>
           Manage -<span className='opacity-50'> Adjust your position</span>
         </p>
-        <div className='rounded-[45px] border gray-border text-center w-5/6 py-3 px-4 text-white opacity-50 mb-6'>
+        <div className='rounded-[45px] border gray-border text-center w-full py-3 px-4 text-white opacity-50 mb-6'>
           Place Order
         </div>
-        <div className='w-5/6 h-[1px] mt-6 bg-[#ffffff1a] mb-6'></div>
-        <div className='w-5/6'>
+        <div className='w-full h-[1px] mt-6 bg-[#ffffff1a] mb-6'></div>
+        <div className='w-full'>
           <div className='flex justify-between items-center text-white mb-4'>
             <div className='flex justify-center items-center gap-2 opacity-50'>
               Total Fees
