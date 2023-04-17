@@ -45,7 +45,7 @@ export default function Header() {
             <a
               href={el.link}
               key={el.name}
-              className={`decoration-none 2xl:px-[22px] sm:px-[10px] sm:py-1 2xl:py-2 ${
+              className={`decoration-none cursor-pointer hover:opacity-80 2xl:px-[22px] sm:px-[10px] sm:py-1 2xl:py-2 ${
                 el.active && 'badge-purple rounded-3xl'
               }`}
             >
@@ -77,7 +77,7 @@ export default function Header() {
                 {coinsList.map((el: CoinProps) => (
                   <div
                     id={el.value}
-                    className='flex items-center justify-between p-3 hover:badge-purple hover:rounded-3xl'
+                    className='flex items-center justify-between p-3 hover:opacity-80 cursor-pointer hover:rounded-3xl'
                     onClick={() => {
                       setCoin(el);
                       coinsList.forEach((item: CoinProps) => {
@@ -104,7 +104,7 @@ export default function Header() {
               </div>
             )}
           </div>
-          <button className='whitespace-nowrap text-white relative rounded-3xl bg-gradient-to-r from-[#EF5320] to-[#FF6F28] px-6 py-[10px]'>
+          <button className='whitespace-nowrap text-white relative rounded-3xl bg-gradient-to-r cursor-pointer hover:opacity-80 from-[#EF5320] to-[#FF6F28] px-6 py-[10px]'>
             Connect Wallet
           </button>
         </div>

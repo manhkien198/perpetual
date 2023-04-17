@@ -1,17 +1,17 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import { ITableProps } from '../models';
 
 export default function Table({
   header,
-  body,
+  body,nodata
 }: {
   header: ITableProps[];
-  body?: ITableProps[];
+  body?: ITableProps[];nodata?:string|ReactNode
 }) {
   return (
     <table className='w-full gray-bg border-none border-separate border-spacing-0 rounded-3xl'>
       <thead className='rounded-3xl'>
-        <tr className='text-white opacity-80 gray-bg'>
+        <tr className='text-white gray-bg'>
           {header.map((el: ITableProps) => (
             <th
               key={el.id}
@@ -37,10 +37,10 @@ export default function Table({
         ) : (
           <tr>
             <td
-              className='py-2 text-white text-center font-bold text-base no-data h-[100px]'
+              className='py-2 text-white text-center font-bold text-base h-[100px]'
               colSpan={header.length}
             >
-              You have no other open positions
+              {nodata}
             </td>
           </tr>
         )}

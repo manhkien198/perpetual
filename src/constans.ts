@@ -148,3 +148,77 @@ export const secondTableHeader: ITableProps[] = [
     title: 'Liq. Price',
   },
 ];
+export const tradeHeader: ITableProps[] = [
+  {
+    id: 1,
+    title: 'Date',
+  },
+  {
+    id: 2,
+    title: 'Side',
+  },
+  {
+    id: 3,
+    title: 'Price',
+  },
+  {
+    id: 4,
+    title: 'Trade Size',
+  },
+  {
+    id: 5,
+    title: 'Fees',
+  },
+  {
+    id: 6,
+    title: 'Order Type',
+  },
+  {
+    id: 7,
+    title: 'Liq. Price',
+  },
+];
+export const orderHeader: ITableProps[] = [
+  {
+    id: 1,
+    title: 'Market/Type',
+  },
+  {
+    id: 2,
+    title: 'Side',
+  },
+  {
+    id: 3,
+    title: 'Size',
+  },
+  {
+    id: 4,
+    title: 'Status',
+  },
+  {
+    id: 5,
+    title: 'Action',
+  },
+];
+export const transferHeader: ITableProps[] = [
+  {
+    id: 1,
+    title: 'Action',
+  },
+  {
+    id: 2,
+    title: 'Amount',
+  },
+  {
+    id: 3,
+    title: 'Date',
+  },
+  {
+    id: 4,
+    title: 'Transaction',
+  },
+  {
+    id: 5,
+    title: 'Action',
+  },
+];

@@ -4,7 +4,7 @@ import { ChartProps } from '../models';
 export default function LeftSide() {
   return (
     <div className='flex flex-col w-[330px] xl:w-full'>
-      <div className='relative h-12 mb-7'>
+      <div className='relative h-12 mb-7 z-1'>
         <div className='absolute text-white grid grid-cols-3 w-full'>
           <p className='col-span-1'>50%</p>
           <p className='col-span-1 text-center'>Skew</p>

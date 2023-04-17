@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { cardEth, secondTableHeader } from '../constans';
+import { cardEth, orderHeader, secondTableHeader, tradeHeader } from '../constans';
 import Oder from '../images/Order.svg';
 import Trade from '../images/Time_atack.svg';
 import Calculator from '../images/calculator.svg';
@@ -23,13 +23,13 @@ const Row = ({
 }) => {
   return (
     <div className='grid grid-cols-2 gap-7 w-auto'>
-      <div className=' col-span-1 flex flex-col justify-center items-start'>
+      <div className='col-span-2 md:col-span-1 flex flex-col justify-center items-start'>
         <p className='text-white opacity-50'>{title1}</p>
         <div className='uppercase border border-gray rounded-3xl w-[237px] py-3 px-4 text-white opacity-50 mb-6'>
           {value1}
         </div>
       </div>
-      <div className=' col-span-1 flex flex-col justify-center items-start'>
+      <div className='col-span-2 md:col-span-1 flex flex-col justify-center items-start'>
         <p className='text-white opacity-50'>{title2}</p>
         <div className='uppercase border border-gray rounded-3xl w-[237px] py-3 px-4 text-white opacity-50 mb-6'>
           {value2}
@@ -127,6 +127,7 @@ const Content = () => {
 };
 export default function MainContent() {
   const [showModal, setShowModal] = useState(false);
+  const [tab, setTab] = useState('position')
   return (
     <div className='md:flex md:flex-col'>
       {showModal && (
@@ -140,32 +141,34 @@ export default function MainContent() {
       <div className='h-[400px]'></div>
       <div className='flex justify-between items-center mb-7 gap-6 flex-wrap 2xl:flex-nowrap'>
         <div className='grid-cols-4 grid gap-3'>
-          <div className='md:col-span-1 col-span-2'>
-            <Badge icon={Position} active title='Position' />
-          </div>
-          <div className='md:col-span-1 col-span-2'>
-            <Badge icon={Oder} title='Oders' />
-          </div>
-          <div className='md:col-span-1 col-span-2'>
-            <Badge icon={Trade} title='Trades' />
-          </div>
-          <div className='md:col-span-1 col-span-2'>
-            <Badge icon={Tranfer} title='Tranfers' />
-          </div>
+          <button className='md:col-span-1 col-span-2 hover:opacity-80' onClick={()=>setTab('position')}>
+            <Badge icon={Position} active={tab==='position'} title='Position' />
+          </button>
+          <button className='md:col-span-1 col-span-2 hover:opacity-80' onClick={()=>setTab('orders')}>
+            <Badge icon={Oder} active={tab==='orders'} title='Oders' />
+          </button>
+          <button className='md:col-span-1 col-span-2 hover:opacity-80' onClick={()=>setTab('trades')}>
+            <Badge icon={Trade} active={tab==='trades'} title='Trades' />
+          </button>
+          <button className='md:col-span-1 col-span-2 hover:opacity-80' onClick={()=>setTab('tranfers')}>
+            <Badge icon={Tranfer} active={tab==='tranfers'} title='Tranfers' />
+          </button>
         </div>
         <div className='gap-3 grid grid-cols-2'>
-          <div
-            className='md:col-span-1'
+          <button
+            className='md:col-span-1  hover:opacity-80'
             onClick={() => setShowModal(!showModal)}
           >
             <Badge icon={Calculator} title='Calculator' />
-          </div>
-          <div className='md:col-span-1'>
+          </button>
+          <button className='md:col-span-1  hover:opacity-80'>
             <Badge icon={Share} title='Share' reverse />
-          </div>
+          </button>
         </div>
       </div>
-      <div className='grid justify-center items-center grid-cols-3 gap-6 mb-6'>
+      {tab==='position'&&(
+        <>
+        <div className='grid justify-center items-center grid-cols-3 gap-6 mb-6'>
         <div className='2xl:col-span-1 col-span-3'>
           <Card cards={cardEth} />
         </div>
@@ -177,8 +180,33 @@ export default function MainContent() {
         </div>
       </div>
       <div className='rounded-3xl overflow-x-auto'>
-        <Table header={secondTableHeader} />
+        <Table header={secondTableHeader} nodata={<p className='no-data'>You have no other open positions</p>}/>
+      </div></>
+      )}
+      {tab==='orders'&&(
+        <div className='rounded-3xl overflow-x-auto'>
+        <Table header={orderHeader} nodata={<NoData/>}/>
       </div>
+      )}
+      {tab==='trades'&&(
+        <div className='rounded-3xl overflow-x-auto'>
+        <Table header={tradeHeader} nodata={<NoData/>}/>
+      </div>
+      )}
+      {tab==='tranfers'&&(
+        <div className='rounded-3xl overflow-x-auto'>
+        <Table header={secondTableHeader} nodata={<NoData/>}/>
+      </div>
+      )}
     </div>
   );
+}
+const NoData=()=>{
+  return(
+    <div>
+      Perpetual futures are available on Optimism L2
+      <br/>
+<u>Switch to L2</u>
+    </div>
+  )
 }

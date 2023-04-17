@@ -21,11 +21,17 @@ function App() {
     title: '-',
   }));
   const [showMenu, setShowMenu] = useState(false);
+  const [showDropDown, setShowDropDown] = useState(false)
   return (
     <div className='bg-[#1E1E1E]  px-[28px] pb-[44px] pt-4 overflow-hidden'>
       <Header />
       <div className='grid grid-cols-4 gap-6'>
-        <div className='col-span-4 xl:col-span-1 rounded-3xl bg-linear-gray py-3 px-4 mb-6  w-[330px] xl:w-full'>
+        <button className='col-span-4 z-50 xl:col-span-1 rounded-3xl bg-linear-gray py-3 px-4 mb-6  w-[330px] xl:w-full relative' onClick={()=>setShowDropDown(!showDropDown)}>
+        {showDropDown && (
+              <div className='absolute top-20 left-0 p-6 z-70 bg-[black] rounded-2xl text-white w-full'>
+                No Data
+              </div>
+            )}
           <div className='flex gap-3 items-center'>
             <img src={EtheLogo} alt='Ethereum logo' className='w-10 h-10' />
             <div className='flex flex-col'>
@@ -40,7 +46,7 @@ function App() {
               <img src={Arrow} alt='arrow down' className='w-[7px] h-[10px]' />
             </div>
           </div>
-        </div>
+        </button>
         <div className='col-span-2 overflow-x-auto rounded-3xl xl:block hidden'>
           <Table header={firstTableHeader} body={firstBody} />
         </div>

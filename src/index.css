@@ -109,3 +109,6 @@ input[type='range']::-webkit-slider-runnable-track {
   border: none;
   background: transparent;
 }
+.gray-text{
+  color:rgba(255, 255, 255, 0.5);
+}

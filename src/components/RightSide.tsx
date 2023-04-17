@@ -5,12 +5,14 @@ import UpDown from '../images/up-down.svg';
 import XBadge from './XBadge';
 export default function RightSide() {
   const [percent, setPercent] = useState(20);
+  const [x, setX] = useState('2.0x');
+  const [activeGreenButton, setActiveGreenButton] = useState('long');
   return (
     <div className='flex flex-col'>
       <div className='px-6'>
         <div className='flex flex-col gap-4 mb-[58px]'>
           <div className='grid grid-cols-2'>
-            <p className='font-medium col-span-1 text-white opacity-50 font-base'>
+            <p className='font-medium col-span-1 gray-text font-base'>
               Available Margin:
             </p>
             <p className='text-right font-bold col-span-1 text-white font-base'>
@@ -18,7 +20,7 @@ export default function RightSide() {
             </p>
           </div>
           <div className='grid grid-cols-2'>
-            <p className='font-medium col-span-1 text-white opacity-50 font-base'>
+            <p className='font-medium col-span-1 gray-text font-base'>
               Buying Power::
             </p>
             <p className='text-right font-bold col-span-1 text-white font-base'>
@@ -26,7 +28,7 @@ export default function RightSide() {
             </p>
           </div>
           <div className='grid grid-cols-2'>
-            <p className='font-medium col-span-1 text-white opacity-50 font-base'>
+            <p className='font-medium col-span-1 gray-text font-base'>
               Margin Usage::
             </p>
             <p className='text-right font-bold col-span-1 text-white font-base'>
@@ -35,10 +37,22 @@ export default function RightSide() {
           </div>
         </div>
         <div className='px-3 flex gap-2 items-center mb-[34px]'>
-          <div className='green-badge px-[33px] 2xl:px-[66px] py-2 text-white'>
+          <button
+            className={`px-[33px] 2xl:px-[66px] py-2 text-white hover:opacity-80 ${
+              activeGreenButton === 'long' ? 'green-badge' : ''
+            }`}
+            onClick={() => setActiveGreenButton('long')}
+          >
             LONG
-          </div>
-          <div className='px-[33px] 2xl:px-[66px] py-2 text-white'>SHORT</div>
+          </button>
+          <button
+            className={`px-[33px] 2xl:px-[66px] py-2 text-white hover:opacity-80 ${
+              activeGreenButton === 'short' ? 'green-badge' : ''
+            }`}
+            onClick={() => setActiveGreenButton('short')}
+          >
+            SHORT
+          </button>
         </div>
         <p className='text-white font-medium text-base mb-4'>
           Amount -<span className='opacity-50'> Set order size</span>
@@ -66,25 +80,31 @@ export default function RightSide() {
         </div>
         <div className='flex justify-between items-center gap-4 w-full mb-6'>
           <div className='flex justify-center items-center gap-4'>
-            <div className='rounded-3xl py-[6px] px-4 border border-green-400'>
-              <p className='w-20 font-bold text-base text-white opacity-70'>
-                2.0x
-              </p>
-            </div>
+            <input
+              type='text'
+              className='bg-transparent rounded-3xl py-[6px] px-4 border w-[113px] border-green-400 outline-none font-bold text-base text-white'
+              value={x}
+            />
             <p className='text-[#85FF83]'>LONG</p>
           </div>
           <div className='flex justify-center items-center gap-2'>
-            <XBadge count='x2' active />
-            <XBadge count='x5' />
-            <XBadge count='x10' />
+            <button onClick={() => setX('2.0x')}>
+              <XBadge count='x2' active={x === '2.0x'} />
+            </button>
+            <button onClick={() => setX('5.0x')}>
+              <XBadge count='x5' active={x === '5.0x'} />
+            </button>
+            <button onClick={() => setX('10.0x')}>
+              <XBadge count='x10' active={x === '10.0x'} />
+            </button>
           </div>
         </div>
         <p className='text-white font-medium text-base mb-4'>
           Manage -<span className='opacity-50'> Adjust your position</span>
         </p>
-        <div className='rounded-[45px] border gray-border text-center w-full py-3 px-4 text-white opacity-50 mb-6'>
+        <button className='rounded-[45px] border gray-border text-center w-full py-3 px-4 text-white hover:opacity-100 hover:gray-bg opacity-50 mb-6'>
           Place Order
-        </div>
+        </button>
         <div className='w-full h-[1px] mt-6 bg-[#ffffff1a] mb-6'></div>
         <div className='w-full'>
           <div className='flex justify-between items-center text-white mb-4'>
