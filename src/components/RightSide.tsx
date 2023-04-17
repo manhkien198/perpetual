@@ -34,9 +34,11 @@ export default function RightSide() {
             </p>
           </div>
         </div>
-        <div className='px-3 flex gap-2 justify-center items-center mb-[34px]'>
-          <div className='green-badge px-[66px] py-2 text-white'>LONG</div>
-          <div className='px-[66px] py-2 text-white'>SHORT</div>
+        <div className='px-3 flex gap-2 items-center mb-[34px]'>
+          <div className='green-badge px-[33px] 2xl:px-[66px] py-2 text-white'>
+            LONG
+          </div>
+          <div className='px-[33px] 2xl:px-[66px] py-2 text-white'>SHORT</div>
         </div>
         <p className='text-white font-medium text-base mb-4'>
           Amount -<span className='opacity-50'> Set order size</span>
