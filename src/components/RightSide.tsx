@@ -13,7 +13,7 @@ export default function RightSide() {
             <p className='font-medium col-span-1 text-white opacity-50 font-base'>
               Available Margin:
             </p>
-            <p className='font-bold col-span-1 text-center text-white font-base'>
+            <p className='text-right font-bold col-span-1 text-white font-base'>
               $0.00
             </p>
           </div>
@@ -21,7 +21,7 @@ export default function RightSide() {
             <p className='font-medium col-span-1 text-white opacity-50 font-base'>
               Buying Power::
             </p>
-            <p className='font-bold col-span-1 text-center text-white font-base'>
+            <p className='text-right font-bold col-span-1 text-white font-base'>
               $0.00
             </p>
           </div>
@@ -29,7 +29,7 @@ export default function RightSide() {
             <p className='font-medium col-span-1 text-white opacity-50 font-base'>
               Margin Usage::
             </p>
-            <p className='font-bold col-span-1 text-center text-white font-base'>
+            <p className='text-right font-bold col-span-1 text-white font-base'>
               0.00%
             </p>
           </div>

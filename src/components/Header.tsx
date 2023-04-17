@@ -65,7 +65,7 @@ export default function Header() {
               <img src={Arrow} alt='arrow down' className='mr-3' />
             </button>
             {show && (
-              <div className='absolute w-80 top-20 p-6 bg-black rounded-2xl'>
+              <div className='absolute w-80 top-20 p-6 z-70 bg-[black] rounded-2xl'>
                 <div className='flex items-center justify-between mb-6'>
                   <h4 className='font-bold text-xl'>Switch Networks</h4>
                   <img
