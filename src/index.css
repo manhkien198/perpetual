@@ -79,3 +79,10 @@ tbody.left-body > tr:nth-child(odd) {
   animation: slideInUp;
   animation-duration: 1s;
 }
+.modal {
+  box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.5);
+}
+.modal-container {
+  animation: zoomInUp;
+  animation-duration: 1s;
+}
