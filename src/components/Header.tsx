@@ -104,7 +104,7 @@ export default function Header() {
               </div>
             )}
           </div>
-          <button className='whitespace-nowrap relative rounded-3xl bg-gradient-to-r from-[#EF5320] to-[#FF6F28] px-6 py-[10px]'>
+          <button className='whitespace-nowrap text-white relative rounded-3xl bg-gradient-to-r from-[#EF5320] to-[#FF6F28] px-6 py-[10px]'>
             Connect Wallet
           </button>
         </div>

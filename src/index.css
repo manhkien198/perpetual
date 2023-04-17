@@ -75,3 +75,7 @@ tbody.left-body > tr:nth-child(odd) {
 .gray-border {
   border-color: rgb(255, 255, 255, 0.1);
 }
+.slide {
+  animation: slideInUp;
+  animation-duration: 1s;
+}
