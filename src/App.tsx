@@ -44,7 +44,7 @@ function App() {
         <div className='col-span-2 overflow-x-auto rounded-3xl xl:block hidden'>
           <Table header={firstTableHeader} body={firstBody} />
         </div>
-        <div className='col-span-4 w-full xl:col-span-1 badge-purple flex justify-between items-center  py-3 px-4 rounded-3xl mb-4 md:w-[448px] '>
+        <div className='col-span-4 w-full xl:col-span-1 badge-purple flex justify-between items-center  py-3 px-4 rounded-3xl mb-4'>
           <div className='flex gap-2 items-center text-white whitespace-nowrap'>
             <img src={Circle} alt='circle' />
             Isolated Margin
