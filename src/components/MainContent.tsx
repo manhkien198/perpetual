@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { cardEth, orderHeader, secondTableHeader, tradeHeader } from '../constans';
+import {
+  cardEth,
+  orderHeader,
+  secondTableHeader,
+  tradeHeader,
+} from '../constans';
 import Oder from '../images/Order.svg';
 import Trade from '../images/Time_atack.svg';
 import Calculator from '../images/calculator.svg';
@@ -127,7 +132,7 @@ const Content = () => {
 };
 export default function MainContent() {
   const [showModal, setShowModal] = useState(false);
-  const [tab, setTab] = useState('position')
+  const [tab, setTab] = useState('position');
   return (
     <div className='md:flex md:flex-col'>
       {showModal && (
@@ -141,17 +146,37 @@ export default function MainContent() {
       <div className='h-[400px]'></div>
       <div className='flex justify-between items-center mb-7 gap-6 flex-wrap 2xl:flex-nowrap'>
         <div className='grid-cols-4 grid gap-3'>
-          <button className='md:col-span-1 col-span-2 hover:opacity-80' onClick={()=>setTab('position')}>
-            <Badge icon={Position} active={tab==='position'} title='Position' />
+          <button
+            className='md:col-span-1 col-span-2 hover:opacity-80'
+            onClick={() => setTab('position')}
+          >
+            <Badge
+              icon={Position}
+              active={tab === 'position'}
+              title='Position'
+            />
           </button>
-          <button className='md:col-span-1 col-span-2 hover:opacity-80' onClick={()=>setTab('orders')}>
-            <Badge icon={Oder} active={tab==='orders'} title='Oders' />
+          <button
+            className='md:col-span-1 col-span-2 hover:opacity-80'
+            onClick={() => setTab('orders')}
+          >
+            <Badge icon={Oder} active={tab === 'orders'} title='Oders' />
           </button>
-          <button className='md:col-span-1 col-span-2 hover:opacity-80' onClick={()=>setTab('trades')}>
-            <Badge icon={Trade} active={tab==='trades'} title='Trades' />
+          <button
+            className='md:col-span-1 col-span-2 hover:opacity-80'
+            onClick={() => setTab('trades')}
+          >
+            <Badge icon={Trade} active={tab === 'trades'} title='Trades' />
           </button>
-          <button className='md:col-span-1 col-span-2 hover:opacity-80' onClick={()=>setTab('tranfers')}>
-            <Badge icon={Tranfer} active={tab==='tranfers'} title='Tranfers' />
+          <button
+            className='md:col-span-1 col-span-2 hover:opacity-80'
+            onClick={() => setTab('tranfers')}
+          >
+            <Badge
+              icon={Tranfer}
+              active={tab === 'tranfers'}
+              title='Tranfers'
+            />
           </button>
         </div>
         <div className='gap-3 grid grid-cols-2'>
@@ -166,45 +191,47 @@ export default function MainContent() {
           </button>
         </div>
       </div>
-      {tab==='position'&&(
+      {tab === 'position' && (
         <>
-        <div className='grid justify-center items-center grid-cols-3 gap-6 mb-6'>
-        <div className='2xl:col-span-1 col-span-3'>
-          <Card cards={cardEth} />
-        </div>
-        <div className='2xl:col-span-1 col-span-3'>
-          <Card cards={cardEth} />
-        </div>
-        <div className='2xl:col-span-1 col-span-3'>
-          <Card cards={cardEth} />
-        </div>
-      </div>
-      <div className='rounded-3xl overflow-x-auto'>
-        <Table header={secondTableHeader} nodata={<p className='no-data'>You have no other open positions</p>}/>
-      </div></>
+          <div className='grid justify-center items-center grid-cols-3 gap-6 mb-6'>
+            <div className='2xl:col-span-1 col-span-3'>
+              <Card cards={cardEth} />
+            </div>
+            <div className='2xl:col-span-1 col-span-3'>
+              <Card cards={cardEth} />
+            </div>
+            <div className='2xl:col-span-1 col-span-3'>
+              <Card cards={cardEth} />
+            </div>
+          </div>
+          <div className='rounded-3xl overflow-x-auto'>
+            <Table
+              header={secondTableHeader}
+              nodata={
+                <p className='no-data'>You have no other open positions</p>
+              }
+            />
+          </div>
+        </>
       )}
-      {tab==='orders'&&(
+      {tab === 'orders' && (
         <div className='rounded-3xl overflow-x-auto'>
-        <Table header={orderHeader} nodata={<NoData/>}/>
-      </div>
+          <Table header={orderHeader} nodata={<NoData />} />
+        </div>
       )}
-      {tab==='trades'&&(
+      {tab === 'trades' && (
         <div className='rounded-3xl overflow-x-auto'>
-        <Table header={tradeHeader} nodata={<NoData/>}/>
-      </div>
+          <Table header={tradeHeader} nodata={<NoData />} />
+        </div>
       )}
-      {tab==='tranfers'&&(
+      {tab === 'tranfers' && (
         <div className='rounded-3xl overflow-x-auto'>
-        <Table header={secondTableHeader} nodata={<NoData/>}/>
-      </div>
+          <Table header={secondTableHeader} nodata={<NoData />} />
+        </div>
       )}
     </div>
   );
 }
-const NoData=()=>{
-  return(
-    <div>
-      You have no open orders
-    </div>
-  )
-}
+const NoData = () => {
+  return <div>You have no open orders</div>;
+};

@@ -43,9 +43,14 @@ export default function Header() {
         {/* middle */}
         <div className='items-center flex grow'>
           {navLinks.map((el: NavLinkProps) => (
-            <NavLink to={el.link} key={el.name} className={( {isActive})=>`decoration-none cursor-pointer hover:opacity-80 2xl:px-[22px] sm:px-[10px] sm:py-1 2xl:py-2 ${
-              isActive&& 'badge-purple rounded-3xl'
-            }`}
+            <NavLink
+              to={el.link}
+              key={el.name}
+              className={({ isActive }) =>
+                `decoration-none cursor-pointer hover:opacity-80 2xl:px-[22px] sm:px-[10px] sm:py-1 2xl:py-2 ${
+                  isActive && 'badge-purple rounded-3xl'
+                }`
+              }
             >
               {el.name}
             </NavLink>

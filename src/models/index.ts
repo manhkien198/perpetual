@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface ChartProps {
   amount: string;
   price: string;
@@ -7,6 +9,8 @@ export interface ChartProps {
 export interface NavLinkProps {
   name: string;
   link: string;
+  children?: SibarChildProps[];
+  icon?: ReactNode;
 }
 export interface CoinProps {
   name: string;
@@ -17,4 +21,8 @@ export interface CoinProps {
 export interface ITableProps {
   id: number;
   title: string;
+}
+export interface SibarChildProps {
+  title: string;
+  link: string;
 }

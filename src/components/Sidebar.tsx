@@ -1,15 +1,21 @@
-import React from 'react'
-import SideBarCol from './SideBarCol'
+import React from 'react';
+import SideBarCol from './SideBarCol';
 
 export default function Sidebar() {
   return (
-    <div>
-        <div className='mb-14'>
-        <SideBarCol title='Trading' children={['Overview','History','Markets']}/>
-        </div>
-        <div>
-        <SideBarCol title='Community' children={['Staking']}/>
-        </div>
+    <div className='flex flex-col gap-14 w-full xl:w-[200px]'>
+      <SideBarCol
+        title='Trading'
+        children={[
+          { title: 'Overview', link: '/dashboard' },
+          { title: 'History', link: '/dashboard/history' },
+          { title: 'Markets', link: '/dashboard/markets' },
+        ]}
+      />
+      <SideBarCol
+        title='Community'
+        children={[{ title: 'Staking', link: '/dashboard/staking' }]}
+      />
     </div>
-  )
+  );
 }
