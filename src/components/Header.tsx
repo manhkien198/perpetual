@@ -5,6 +5,7 @@ import LogoText from '../images/logo-text.svg';
 import CloseIcon from '../images/close.svg';
 import { CoinProps, NavLinkProps } from '../models/index';
 import { coins, navLinks } from '../constans';
+import { Link, NavLink } from 'react-router-dom';
 export default function Header() {
   const [show, setShow] = useState(false);
   const [coin, setCoin] = useState(coins[0]);
@@ -42,15 +43,12 @@ export default function Header() {
         {/* middle */}
         <div className='items-center flex grow'>
           {navLinks.map((el: NavLinkProps) => (
-            <a
-              href={el.link}
-              key={el.name}
-              className={`decoration-none cursor-pointer hover:opacity-80 2xl:px-[22px] sm:px-[10px] sm:py-1 2xl:py-2 ${
-                el.active && 'badge-purple rounded-3xl'
-              }`}
+            <NavLink to={el.link} key={el.name} className={( {isActive})=>`decoration-none cursor-pointer hover:opacity-80 2xl:px-[22px] sm:px-[10px] sm:py-1 2xl:py-2 ${
+              isActive&& 'badge-purple rounded-3xl'
+            }`}
             >
               {el.name}
-            </a>
+            </NavLink>
           ))}
         </div>
         {/* right */}

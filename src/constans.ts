@@ -35,35 +35,25 @@ export const coins: CoinProps[] = [
 ];
 export const navLinks: NavLinkProps[] = [
   {
-    name: 'Swap',
-    link: '',
-    active: false,
+    name: 'Dashboard',
+    link: '/',
   },
   {
-    name: 'Staking',
-    link: '',
-    active: false,
+    name: 'Features',
+    link: '/features',
   },
   {
-    name: 'Farming',
-    link: '',
-    active: false,
+    name: 'Exchange',
+    link: '/exchange',
+  },
+  {
+    name: 'Leaderboard',
+    link: '/leaderboard',
   },
   {
     name: 'Perpetual',
-    link: '',
-    active: true,
-  },
-  {
-    name: 'Launchpad',
-    link: '',
-    active: false,
-  },
-  {
-    name: 'Refernal',
-    link: '',
-    active: false,
-  },
+    link: '/perpetual',
+    }
 ];
 export const charts: ChartProps[] = [
   { id: 1, amount: '36.052', price: '1.950', skew: Increase },

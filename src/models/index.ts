@@ -7,7 +7,6 @@ export interface ChartProps {
 export interface NavLinkProps {
   name: string;
   link: string;
-  active: boolean;
 }
 export interface CoinProps {
   name: string;
