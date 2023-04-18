@@ -50,7 +50,7 @@ const MiniCard = ({
   danger?: boolean;
 }) => {
   return (
-    <div className='w-full rounded-3xl gray-bg py-3 px-4 flex flex-col items-start font-medium text-sm'>
+    <div className='w-full rounded-3xl gray-bg py-3 px-0 md:px-4 flex flex-col items-start font-medium text-sm'>
       <p>{name}</p>
       <p
         className={`${
@@ -204,9 +204,7 @@ export default function MainContent() {
 const NoData=()=>{
   return(
     <div>
-      Perpetual futures are available on Optimism L2
-      <br/>
-<u>Switch to L2</u>
+      You have no open orders
     </div>
   )
 }
