@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { coins, navLinks } from '../constans';
 import Arrow from '../images/arrow.svg';
+import CloseIcon from '../images/close.svg';
 import LogoIcon from '../images/logo-icon.svg';
 import LogoText from '../images/logo-text.svg';
-import CloseIcon from '../images/close.svg';
 import { CoinProps, NavLinkProps } from '../models/index';
-import { coins, navLinks } from '../constans';
-import { Link, NavLink } from 'react-router-dom';
 export default function Header() {
   const [show, setShow] = useState(false);
   const [coin, setCoin] = useState(coins[0]);
