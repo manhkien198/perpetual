@@ -84,6 +84,7 @@ export default function RightSide() {
               type='text'
               className='bg-transparent rounded-3xl py-[6px] px-4 border w-[113px] border-green-400 outline-none font-bold text-base text-white'
               value={x}
+              onChange={(e) => setX(e.target.value)}
             />
             <p className='text-[#85FF83]'>LONG</p>
           </div>
