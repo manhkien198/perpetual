@@ -1,7 +1,7 @@
-import React, { MouseEventHandler, ReactNode, useState } from 'react';
-import Table from './Table';
+import { useState } from 'react';
 import { marketHeader, secondTableHeader } from '../constans';
 import { Button } from './Button';
+import Table from './Table';
 
 export default function Overview() {
   const [activeButton, setActiveButton] = useState(1);

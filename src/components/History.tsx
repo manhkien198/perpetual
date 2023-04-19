@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { firstHistoryHeader, secondHistoryHeader } from '../constans'
-import Table from './Table'
 import { Button } from './Button'
+import Table from './Table'
 
 export default function History() {
   const [tab, setTab] = useState(1)

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { navLinks } from '../constans';
 import Bar from '../images/bar.svg';
 import Close from '../images/cancel.svg';
