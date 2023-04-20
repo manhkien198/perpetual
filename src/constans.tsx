@@ -1,4 +1,9 @@
-import { CoinProps, ITableProps, NavLinkProps } from './models/index';
+import {
+  CoinProps,
+  ITableProps,
+  NavLinkProps,
+  TokenProps,
+} from './models/index';
 import BnbLogo from './images/bnb-logo.svg';
 import EtheLogo from './images/ethe-logo.svg';
 import OpLogo from './images/op-logo.svg';
@@ -7,6 +12,8 @@ import Increase from './images/increase.svg';
 import Decrease from './images/decrease.svg';
 import { ChartProps } from './models/index';
 import { CardProps } from './components/Card';
+import USD from './images/sUSD.png';
+
 export const coins: CoinProps[] = [
   {
     name: 'Ethereum',
@@ -365,4 +372,45 @@ export const secondHistoryHeader: ITableProps[] = [
     id: 4,
     title: 'USD Value',
   },
+];
+export const leaderBoardHeader: ITableProps[] = [
+  {
+    id: 1,
+    title: 'Rank',
+  },
+  {
+    id: 2,
+    title: 'Trader',
+  },
+  {
+    id: 3,
+    title: 'Total Trades',
+  },
+  {
+    id: 4,
+    title: 'Liquidations',
+  },
+  {
+    id: 5,
+    title: 'Total Volume',
+  },
+  {
+    id: 6,
+    title: 'P&L',
+  },
+];
+
+export const listToken: TokenProps[] = [
+  { id: 1, name: 'sUSD', image: USD },
+  { id: 2, name: 'sUSD', image: USD },
+  { id: 3, name: 'sUSD', image: USD },
+  { id: 4, name: 'sUSD', image: USD },
+  { id: 5, name: 'sUSD', image: USD },
+  { id: 6, name: 'sUSD', image: USD },
+  { id: 7, name: 'sUSD', image: USD },
+  { id: 8, name: 'sUSD', image: USD },
+  { id: 9, name: 'sUSD', image: USD },
+  { id: 10, name: 'sUSD', image: USD },
+  { id: 11, name: 'sUSD', image: USD },
+  { id: 12, name: 'sUSD', image: USD },
 ];

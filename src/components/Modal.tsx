@@ -8,6 +8,7 @@ export default function Modal({
   setShowModal,
   rounded,
   purpleHeader,
+  grayBorder,
 }: {
   title: string;
   content: ReactNode;
@@ -15,16 +16,23 @@ export default function Modal({
   setShowModal: Function;
   rounded: number;
   purpleHeader?: boolean;
+  grayBorder?: boolean;
 }) {
   return (
     <div className='fixed bottom-0 left-0 right-0 top-6 2xl:-top-80 bg-[rgba(0,0,0,0.5)] z-50 modal-container'>
-      <div className='absolute  top-0 left-1/2 -translate-x-1/2 flex justify-center items-center h-full'>
-        <div className='text-white font-bold text-[18px] w-[300px] sm:w-[400px]'>
+      <div
+        className={`absolute  top-0 left-1/2 -translate-x-1/2 flex justify-center items-center h-full
+        `}
+      >
+        <div
+          className={`text-white font-bold text-[18px] w-[300px] sm:w-[400px] rounded-[${
+            rounded || 0
+          }px] ${rounded && 'overflow-hidden'} ${grayBorder && 'gray-border'}`}
+        >
           <div
             className={`py-4 px-7 ${
               purpleHeader ? 'badge-purple' : 'bg-black-fade'
             } flex justify-between items-center`}
-            style={{borderTopLeftRadius:rounded,borderTopRightRadius:rounded}}
           >
             <p>{title}</p>
             <img
@@ -35,7 +43,6 @@ export default function Modal({
           </div>
           <div
             className={`py-6 px-8 modal bg-black-fade z-70 max-h-[500px] md:max-h-fit overflow-y-auto`}
-            style={{borderBottomLeftRadius:rounded,borderBottomRightRadius:rounded}}
           >
             {content}
           </div>

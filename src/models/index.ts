@@ -26,3 +26,8 @@ export interface SibarChildProps {
   title: string;
   link: string;
 }
+export interface TokenProps{
+  id:number;
+  name:string;
+  image:string
+}

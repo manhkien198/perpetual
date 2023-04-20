@@ -9,6 +9,7 @@ export default function Table({
   checkbox,
   fontSize,
   loading,
+  title,
 }: {
   header: ITableProps[];
   body?: ITableProps[];
@@ -16,27 +17,58 @@ export default function Table({
   checkbox?: boolean;
   fontSize?: number;
   loading?: boolean;
+  title?: string;
 }) {
   return (
-    <table className='w-full gray-bg border-none border-separate border-spacing-0 rounded-3xl'>
-      <thead className='rounded-3xl'>
-        <tr className='text-white gray-bg'>
-          {checkbox && (
-            <th className='pl-4'>
-              <input type='checkbox' />
-            </th>
-          )}
-          {header.map((el: ITableProps) => (
-            <th
-              key={el.id}
+    <table className='w-full gray-bg border-none border-separate border-spacing-0 rounded-3xl gray-border'>
+      {title ? (
+        <thead className='rounded-3xl'>
+          <tr>
+            <td
+              colSpan={header.length}
+              className='pl-3 py-2 border-b border-[#383636] w-full text-bolder font-normal'
               style={{ fontSize }}
-              className='whitespace-nowrap text-bolder first:pl-3 first:pr-4 last:pr-3 last:pl-4 px-4 py-2 2xl:px-[31px] 2xl:py-[20px] first:rounded-bl-3xl last:rounded-br-3xl'
             >
-              {el.title}
-            </th>
-          ))}
-        </tr>
-      </thead>
+              {title}
+            </td>
+          </tr>
+          <tr>
+            {checkbox && (
+              <th className='pl-4'>
+                <input type='checkbox' />
+              </th>
+            )}
+            {header.map((el: ITableProps) => (
+              <th
+                key={el.id}
+                style={{ fontSize }}
+                className={`whitespace-nowrap border-b border-[#383636] text-left font-normal text-bolder first:pl-3 first:pr-4 last:pr-3 last:pl-4 px-4 py-2 2xl:px-[31px] 2xl:py-[20px] first:rounded-bl-3xl last:rounded-br-3xl`}
+              >
+                {el.title}
+              </th>
+            ))}
+          </tr>
+        </thead>
+      ) : (
+        <thead className='rounded-3xl'>
+          <tr className='text-white gray-bg'>
+            {checkbox && (
+              <th className='pl-4'>
+                <input type='checkbox' />
+              </th>
+            )}
+            {header.map((el: ITableProps) => (
+              <th
+                key={el.id}
+                style={{ fontSize }}
+                className='whitespace-nowrap border-b border-[#383636] text-bolder first:pl-3 first:pr-4 last:pr-3 last:pl-4 px-4 py-2 2xl:px-[31px] 2xl:py-[20px] first:rounded-bl-3xl last:rounded-br-3xl'
+              >
+                {el.title}
+              </th>
+            ))}
+          </tr>
+        </thead>
+      )}
       <tbody>
         {!loading ? (
           body ? (
