@@ -143,7 +143,7 @@ export default function MainContent() {
           setShowModal={setShowModal}
           rounded={24}
           grayBorder
-          purpleHeader={false}
+          purpleHeader={true}
         />
       )}
       <div className='h-[400px]'></div>
