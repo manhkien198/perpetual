@@ -1,0 +1,7 @@
+import React from 'react'
+
+export default function RewardLogo() {
+  return (
+    <svg width="17" height="19" viewBox="0 0 17 19" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.003 6.87v-4.6L0 4.6l4.003 2.27Z" fill="#348AA7"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M8.005 4.6 4.003 6.87v4.66l4.002 2.27V4.6Z" fill="#55CF98"></path><path fill-rule="evenodd" clip-rule="evenodd" d="m0 4.6 4.003 2.27v4.66L0 13.8V4.6Z" fill="#1A6882"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M4.003 2.27 8.005 4.6 4.003 6.87v-4.6Z" fill="#76E8B5"></path><path fill-rule="evenodd" clip-rule="evenodd" d="m0 13.8 4.003-2.27 4.002 2.27v4.6L0 13.8Z" fill="#12556B"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12.008 2.27 8.005 4.6 4.003 2.27 8.005 0l4.003 2.27Z" fill="#BCE784"></path><path fill-rule="evenodd" clip-rule="evenodd" d="m8.005 4.6 4.003 2.27v4.66L8.005 13.8V4.6Z" fill="#48B081"></path><path fill-rule="evenodd" clip-rule="evenodd" d="m16.01 4.6-4.002 2.27v4.66l4.002 2.27V4.6Z" fill="#1A6882"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12.008 2.27 8.005 4.6l4.003 2.27v-4.6Z" fill="#57C795"></path><path fill-rule="evenodd" clip-rule="evenodd" d="m16.01 13.8-4.002-2.27-4.003 2.27v4.6l8.005-4.6Z" fill="#0D3E4F"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M12.008 6.87v-4.6L16.01 4.6l-4.002 2.27Z" fill="#348AA7"></path></svg>
+  )
+}

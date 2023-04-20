@@ -55,10 +55,20 @@ export const navLinks: NavLinkProps[] = [
     name: 'Dashboard',
     link: '/dashboard',
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-</svg>
-
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        fill='none'
+        viewBox='0 0 24 24'
+        strokeWidth='1.5'
+        stroke='currentColor'
+        className='w-6 h-6'
+      >
+        <path
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          d='M19.5 8.25l-7.5 7.5-7.5-7.5'
+        />
+      </svg>
     ),
     children: [
       {
@@ -80,8 +90,8 @@ export const navLinks: NavLinkProps[] = [
     ],
   },
   {
-    name: 'Features',
-    link: '/features',
+    name: 'Perpetual',
+    link: '/perpetual',
     icon: <IconRight />,
   },
   {
@@ -92,11 +102,6 @@ export const navLinks: NavLinkProps[] = [
   {
     name: 'Leaderboard',
     link: '/leaderboard',
-    icon: <IconRight />,
-  },
-  {
-    name: 'Perpetual',
-    link: '/perpetual',
     icon: <IconRight />,
   },
 ];
@@ -283,6 +288,32 @@ export const marketHeader: ITableProps[] = [
     title: '24H Volumn',
   },
 ];
+export const escowHeader: ITableProps[] = [
+  {
+    id: 1,
+    title: 'Date',
+  },
+  {
+    id: 2,
+    title: 'Time Util Vestable',
+  },
+  {
+    id: 3,
+    title: 'Immediately Vestable',
+  },
+  {
+    id: 4,
+    title: 'Amount',
+  },
+  {
+    id: 5,
+    title: 'Early Vest Fee',
+  },
+  {
+    id: 6,
+    title: 'Status',
+  },
+];
 export const firstHistoryHeader: ITableProps[] = [
   {
     id: 1,
@@ -334,4 +365,4 @@ export const secondHistoryHeader: ITableProps[] = [
     id: 4,
     title: 'USD Value',
   },
-  ];
+];

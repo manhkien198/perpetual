@@ -1,5 +1,5 @@
 import 'animate.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 import Dashboard from './components/Dashboard';
 import Exchange from './components/Exchange';
@@ -11,8 +11,17 @@ import Overview from './components/Overview';
 import History from './components/History';
 import Markets from './components/Markets';
 import Staking from './components/Staking';
+import { useEffect } from 'react';
 
 export default function App() {
+  const navigate=useNavigate()
+  const location = useLocation()
+  const path=location.pathname
+  useEffect(()=>{
+    if(path==='/'){
+      navigate('/dashboard')
+    }
+  },[path])
   return (
     <Routes>
       <Route path='/' element={<Layout />}>

@@ -141,6 +141,8 @@ export default function MainContent() {
           content={<Content />}
           showModal={showModal}
           setShowModal={setShowModal}
+          rounded={24}
+          purpleHeader={false}
         />
       )}
       <div className='h-[400px]'></div>

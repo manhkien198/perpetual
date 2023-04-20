@@ -3,7 +3,7 @@ import SideBarCol from './SideBarCol';
 
 export default function Sidebar() {
   return (
-    <div className='flex flex-col gap-14 w-full xl:w-[200px]'>
+    <div className='flex flex-col gap-14 w-[200px]'>
       <SideBarCol
         title='Trading'
         children={[

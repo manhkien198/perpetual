@@ -1,43 +1,45 @@
 import { MouseEventHandler, ReactNode } from 'react';
 
 export const Button = ({
-    top,
-    bottom,
-    active,
-    fullWidth,
-    onClick,
-    center,
-  }: {
-    top: ReactNode;
-    fullWidth?: boolean;
-    bottom?: string;
-    active: boolean;
-    center?: boolean;
-    onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
-  }) => {
-    return (
-      <button
-        className={`py-[10px] px-[14px] rounded-[10px] gray-border hover:bg-gray-800 ${
-          fullWidth ? 'w-full' : ''
+  top,
+  bottom,
+  active,
+  fullWidth,
+  onClick,
+  center,
+  noDrop,
+}: {
+  top: ReactNode;
+  fullWidth?: boolean;
+  bottom?: string;
+  active: boolean;
+  center?: boolean;
+  noDrop?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
+}) => {
+  return (
+    <button
+      className={`py-[10px] px-[14px] rounded-[10px] gray-border hover:bg-gray-800 ${
+        fullWidth ? 'w-full' : ''
+      } ${noDrop && 'cursor-no-drop'}`}
+      onClick={onClick}
+    >
+      <div
+        className={`flex flex-col ${center ? 'text-center' : 'items-start'} ${
+          active ? 'text-white' : 'text-bolder'
         }`}
-        onClick={onClick}
       >
-        <div
-          className={`flex flex-col ${center ? 'text-center' : 'items-start'} ${
-            active ? 'text-white' : 'text-bolder'
-          }`}
-        >
-          {top}
-          {bottom && (
-            <p
-              className={`text-[18px] ${
-                active ? 'text-[#49B080]' : 'text-bolder'
-              }`}
-            >
-              {bottom}
-            </p>
-          )}
-        </div>
-      </button>
-    );
-  };
+        {top}
+        {bottom && (
+          <p
+            className={`text-[18px] ${
+              active ? 'text-[#49B080]' : 'text-bolder'
+            }`}
+          >
+            {bottom}
+          </p>
+        )}
+      </div>
+    </button>
+  );
+};
