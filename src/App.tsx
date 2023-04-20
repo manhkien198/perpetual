@@ -21,7 +21,7 @@ export default function App() {
     if(path==='/'){
       navigate('/dashboard')
     }
-  },[path])
+  },[path,navigate])
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
