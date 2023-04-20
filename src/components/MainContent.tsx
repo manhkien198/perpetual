@@ -142,6 +142,7 @@ export default function MainContent() {
           showModal={showModal}
           setShowModal={setShowModal}
           rounded={24}
+          grayBorder
           purpleHeader={false}
         />
       )}

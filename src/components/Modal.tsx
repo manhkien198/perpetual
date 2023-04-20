@@ -25,9 +25,10 @@ export default function Modal({
         `}
       >
         <div
-          className={`text-white font-bold text-[18px] w-[300px] md:w-[600px] rounded-[${
-            rounded || 0
-          }px] ${rounded && 'overflow-hidden'} ${grayBorder && 'gray-border'}`}
+          className={`text-white font-bold text-[18px] w-[300px] md:w-[600px] ${
+            rounded && 'overflow-hidden'
+          } ${grayBorder && 'gray-border'}`}
+          style={{ borderRadius: rounded || 0 }}
         >
           <div
             className={`py-4 px-7 ${
