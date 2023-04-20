@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { leaderBoardHeader } from '../constans';
 import { Button } from './Button';
 import Table from './Table';
-import { leaderBoardHeader, secondHistoryHeader } from '../constans';
 
 export default function LeaderBoard() {
   const [activeTable, setActiveTable] = useState('top');
