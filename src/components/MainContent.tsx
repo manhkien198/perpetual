@@ -181,7 +181,7 @@ export default function MainContent() {
             />
           </button>
         </div>
-        <div className='gap-3 grid grid-cols-2'>
+        <div className='gap-3 hidden md:grid grid-cols-2'>
           <button
             className='md:col-span-1  hover:opacity-80'
             onClick={() => setShowModal(!showModal)}

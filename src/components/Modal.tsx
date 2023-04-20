@@ -25,7 +25,7 @@ export default function Modal({
         `}
       >
         <div
-          className={`text-white font-bold text-[18px] w-[300px] sm:w-[400px] rounded-[${
+          className={`text-white font-bold text-[18px] w-[300px] md:w-full rounded-[${
             rounded || 0
           }px] ${rounded && 'overflow-hidden'} ${grayBorder && 'gray-border'}`}
         >
