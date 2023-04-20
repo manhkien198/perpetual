@@ -28,17 +28,21 @@ const Row = ({
 }) => {
   return (
     <div className='grid grid-cols-2 gap-7 w-auto'>
-      <div className='col-span-2 md:col-span-1 flex flex-col justify-center items-start'>
+      <div className='col-span-2 md:col-span-1 gap-2 flex flex-col justify-center items-start'>
         <p className='text-white opacity-50'>{title1}</p>
-        <div className='uppercase border border-gray rounded-3xl w-[237px] py-3 px-4 text-white opacity-50 mb-6'>
-          {value1}
-        </div>
+        <input
+          type='text'
+          placeholder={value1}
+          className='uppercase border bg-transparent outline-none border-gray rounded-3xl w-[237px] py-3 px-4 text-white opacity-50 mb-6'
+        />
       </div>
-      <div className='col-span-2 md:col-span-1 flex flex-col justify-center items-start'>
+      <div className='col-span-2 md:col-span-1 gap-2 flex flex-col justify-center items-start'>
         <p className='text-white opacity-50'>{title2}</p>
-        <div className='uppercase border border-gray rounded-3xl w-[237px] py-3 px-4 text-white opacity-50 mb-6'>
-          {value2}
-        </div>
+        <input
+          type='text'
+          placeholder={value2}
+          className='uppercase border  bg-transparent outline-none border-gray rounded-3xl w-[237px] py-3 px-4 text-white opacity-50 mb-6'
+        />
       </div>
     </div>
   );

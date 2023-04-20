@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect, useRef } from 'react';
 import Close from '../images/close.svg';
 
 export default function Modal({
@@ -18,9 +18,24 @@ export default function Modal({
   purpleHeader?: boolean;
   grayBorder?: boolean;
 }) {
+  const ref = useRef<any>(null);
+  useEffect(() => {
+    let handler = (e: MouseEvent) => {
+      if (!ref.current.contains(e.target)) {
+        setShowModal(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handler);
+
+    return () => {
+      document.removeEventListener('mousedown', handler);
+    };
+  });
   return (
     <div className='fixed bottom-0 left-0 right-0 top-6 2xl:-top-80 bg-[rgba(0,0,0,0.5)] z-50 modal-container'>
       <div
+        ref={ref}
         className={`absolute  top-0 left-1/2 -translate-x-1/2 flex justify-center items-center h-full
         `}
       >
