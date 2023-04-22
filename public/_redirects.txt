@@ -1,0 +1,4 @@
+/dashboard                /
+/perpetual               /perpetual
+/exchange                /exchange
+/leaderboard             /leaderboard
